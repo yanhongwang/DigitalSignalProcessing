@@ -1,0 +1,5482 @@
+Model {
+  Name			  "GraphicEqualizer"
+  Version		  6.6
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.457"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ibm-5348_P100-1997"
+  PreLoadFcn		  "Frame=64;  % number of points in a frame\n"
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  on
+  LibraryLinkDisplay	  "all"
+  WideLines		  off
+  ShowLineDimensions	  on
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  CloseFcn		  "close all"
+  InitFcn		  "GraphicGUI"
+  StopFcn		  "save_system(gcs)\nsave eq_coefficients  num_den_coe"
+"f\nGraphicGUI('save_state')"
+  Created		  "Mon Jun 10 16:51:22 2002"
+  Creator		  "aanantha"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "allways"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Sun Jun 28 22:30:04 2009"
+  ModelVersionFormat	  "1.%<AutoIncrement:457>"
+  ConfigurationManager	  "None"
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  AccelVerboseBuild	  off
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ProdHWDeviceType	  "32-bit Generic"
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.2.0"
+      Array {
+	Type			"Handle"
+	Dimension		7
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.2.0"
+	  StartTime		  "0.0"
+	  StopTime		  "inf"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  RateTranMode		  "Deterministic"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.2.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    5
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "InitFltsAndDblsToZero"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.2.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  CheckSSInitialOutputMsg on
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "none"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "warning"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  ModelReferenceSimTargetVerbose off
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "None"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.2.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.2.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  8
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  Version		  "1.2.0"
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      9
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      PrefixModelToSubsysFcnNames on
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      10
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonFinite"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      Version		      "1.2.0"
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Diagnostics/Sample Time"
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Abs
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      FrameConversion
+      OutFrame		      "Frame based"
+    }
+    Block {
+      BlockType		      From
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "sfix(16)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "2^0"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Goto
+      IconDisplay	      "Tag"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Signum
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      FixptAsFi		      off
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "GraphicEqualizer"
+    Location		    [2, 124, 1249, 1003]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "[0.780392, 0.909804, 0.756863]"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "124"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Reference
+      Name		      "AF_Gain"
+      Ports		      [1, 1]
+      Position		      [585, 453, 640, 487]
+      BackgroundColor	      "yellow"
+      SourceBlock	      "simulink/Math\nOperations/Slider\nGain"
+      SourceType	      "Slider Gain"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      low		      "0.1"
+      gain		      "0.5"
+      high		      "1"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "BandWidth1"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 122, 330, 148]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "0.0071238"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "BandWidth2"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 252, 330, 278]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "0.070364"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "BandWidth3"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [265, 382, 330, 408]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "0.66183"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "BandWidth4"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 522, 330, 548]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "0.44704"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "BandWidth5"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 657, 330, 683]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "0.039703"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "CenterFreq1"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 92, 330, 118]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "0.034624"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "CenterFreq2"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 222, 330, 248]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "0.016233"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "CenterFreq3"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [265, 351, 330, 379]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "1.2233"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "CenterFreq4"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 492, 330, 518]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "0.88231"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "CenterFreq5"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 627, 330, 653]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "0.084415"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "From Wave\nFile"
+      Ports		      [0, 1]
+      Position		      [530, 157, 670, 213]
+      BackgroundColor	      "[0.694118, 0.894118, 0.972549]"
+      DropShadow	      on
+      NamePlacement	      "alternate"
+      ShowName		      off
+      SourceBlock	      "dspwin32/From Wave\nFile"
+      SourceType	      "From Wave File"
+      FileName		      "HatikvahClip.wav"
+      SamplesPerFrame	      "Frame"
+      MinBufSize	      "256"
+      dType		      "double"
+      bLoop		      on
+      timesToPlay	      "inf"
+      restartMode	      "at beginning of next frame (zero pad)"
+      firstSampleOutput	      off
+      lastSampleOutput	      off
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      Position		      [675, 461, 715, 479]
+      GotoTag		      "AF_gain"
+      TagVisibility	      "global"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Manual Switch"
+      Ports		      [2, 1]
+      Position		      [585, 311, 630, 369]
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      sw		      "0"
+      action		      "0"
+      varsize		      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "One"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [495, 457, 560, 483]
+      BackgroundColor	      "black"
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "1"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PeakGain1"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 63, 330, 87]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "-2.5998"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PeakGain2"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 192, 330, 218]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "-9.6376"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PeakGain3"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [265, 321, 330, 349]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "-11.0414"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PeakGain4"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 463, 330, 487]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "8.1249"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "PeakGain5"
+      Tag		      "paramsBlock"
+      Ports		      [0, 1]
+      Position		      [275, 598, 330, 622]
+      BackgroundColor	      "black"
+      ShowName		      off
+      AttributesFormatString  "\\n\\n\\n\\n"
+      SourceBlock	      "dspsrcs4/DSP\nConstant"
+      SourceType	      "DSP Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Value		      "6.5813"
+      SampleMode	      "Discrete"
+      discreteOutput	      "Sample-based"
+      continuousOutput	      "Sample-based"
+      sampTime		      "-1"
+      framePeriod	      "-1"
+      additionalParams	      off
+      allowOverrides	      on
+      dataType		      "Inherit from 'Constant value'"
+      isSigned		      on
+      wordLen		      "16"
+      udDataType	      "sfix(16)"
+      fracBitsMode	      "Best precision"
+      numFracBits	      "15"
+      InterpretAs1D	      "off"
+      Ts		      "-1"
+      FramebasedOutput	      "off"
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product"
+      Ports		      [2, 1]
+      Position		      [510, 336, 555, 369]
+      CollapseMode	      "All dimensions"
+      InputSameDT	      off
+      RndMeth		      "Floor"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Save Last to Workspace"
+      Ports		      []
+      Position		      [535, 555, 654, 581]
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskDisplay	      "disp('Save Coefficients')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Save Last to Workspace"
+	Location		[2, 124, 1270, 1003]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"195"
+	Block {
+	  BlockType		  From
+	  Name			  "From"
+	  Position		  [25, 26, 80, 44]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "band_1"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From1"
+	  Position		  [25, 71, 80, 89]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "band_2"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From2"
+	  Position		  [25, 116, 80, 134]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "band_3"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From3"
+	  Position		  [25, 251, 80, 269]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "AF_gain"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From4"
+	  Position		  [25, 161, 80, 179]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "band_4"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "From5"
+	  Position		  [25, 206, 80, 224]
+	  CloseFcn		  "tagdialog Close"
+	  GotoTag		  "band_5"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [6, 1]
+	  Position		  [220, 17, 225, 278]
+	  ShowName		  off
+	  Inputs		  "6"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace"
+	  Position		  [260, 138, 340, 162]
+	  VariableName		  "num_den_coef"
+	  MaxDataPoints		  "1"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Line {
+	  SrcBlock		  "From1"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "To Workspace"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From4"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "From3"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "From5"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  5
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "To Wave\nDevice2"
+      Ports		      [1]
+      Position		      [665, 315, 715, 365]
+      BackgroundColor	      "[0.694118, 0.894118, 0.972549]"
+      DropShadow	      on
+      ShowName		      off
+      SourceBlock	      "dspwin32/To Wave\nDevice"
+      SourceType	      "To Wave Device"
+      bufDuration	      "2"
+      determineBufSize	      on
+      userIntBufSize	      "256"
+      initDelay		      "0.1"
+      useDefaultDevice	      off
+      userDeviceID	      "SoundMAX HD Audio"
+      enable24Bit	      off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "band1"
+      Ports		      [4, 1]
+      Position		      [365, 34, 455, 146]
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      ShowName		      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Parametric Equalizer"
+      MaskDescription	      "This block contains the second order IIR filter"
+" which functions as a parametric equalizer. The Inputs to this block, in orde"
+"r, are the Audio In, the peak gain of the equalizer at the center frequency, "
+"the center frequency itself, and the bandwidth of the filter around the cente"
+"r frequency. Currently the bandedges are defined as those frequency where the"
+" gain falls off to one-half the center frequency peak gain."
+      MaskPromptString	      "Reference gain G0|Bandwidth Gain|Attenuation Fa"
+"ctor (Bandwidth Gain = af*Peak Gain; 0<af<1)"
+      MaskStyleString	      "edit,popup(3 dB(1/2 Power)|User-Defined),edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "|parEqMasking|"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,off"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "G0=@1;gbPopup=@2;NdB=@3;"
+      MaskDisplay	      "port_label ('input',1,'Audio In');\nport_label "
+"('input',2,'Peak Gain');\nport_label ('input',3,'Center Frequency');\nport_la"
+"bel ('input',4,'Bandwidth');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|User-Defined|.707"
+      MaskTabNameString	      ",,"
+      System {
+	Name			"band1"
+	Location		[168, 136, 918, 564]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 48, 95, 62]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In3"
+	  Position		  [130, 325, 170, 355]
+	  Orientation		  "up"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In4"
+	  Position		  [190, 325, 230, 355]
+	  Orientation		  "up"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In5"
+	  Position		  [250, 325, 290, 355]
+	  Orientation		  "up"
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [75, 370, 105, 400]
+	  Orientation		  "up"
+	  Value			  "G0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Digital Filter"
+	  Ports			  [3, 1]
+	  Position		  [420, 25, 535, 195]
+	  ShowName		  off
+	  DialogController	  "dspdialog.DigitalFilter"
+	  DialogControllerArgs	  "DataTag0"
+	  SourceBlock		  "dsparch4/Digital Filter"
+	  SourceType		  "Digital Filter"
+	  TypePopup		  "IIR (poles & zeros)"
+	  IIRFiltStruct		  "Direct form II transposed"
+	  AllPoleFiltStruct	  "Direct form"
+	  FIRFiltStruct		  "Direct form"
+	  CoeffSource		  "Input port(s)"
+	  NumCoeffs		  "[1 2]"
+	  DenCoeffs		  "[1 0.1]"
+	  BiQuadCoeffs		  "[1 0.3 0.4 1 0.1 0.2]"
+	  LatticeCoeffs		  "[0.2 0.4]"
+	  denIgnore		  on
+	  FiltPerSampPopup	  "One filter per frame"
+	  IC			  "0"
+	  ICnum			  "0"
+	  ICden			  "0"
+	  additionalParams	  off
+	  allowOverrides	  on
+	  showCoeff		  off
+	  firstCoeffMode	  "Same as input"
+	  firstCoeffWordLength	  "16"
+	  firstCoeffFracLength	  "15"
+	  secondCoeffMode	  "Same as numerator"
+	  secondCoeffWordLength	  "16"
+	  secondCoeffFracLength	  "15"
+	  thirdCoeffMode	  "Same as input"
+	  thirdCoeffWordLength	  "16"
+	  thirdCoeffFracLength	  "15"
+	  showOut		  off
+	  outputMode		  "Same as input"
+	  outputWordLength	  "16"
+	  outputFracLength	  "15"
+	  showAcc		  off
+	  accumMode		  "Same as product output"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  showMpy		  off
+	  prodOutputMode	  "Same as input"
+	  prodOutputWordLength	  "32"
+	  prodOutputFracLength	  "30"
+	  showMem		  off
+	  memoryMode		  "Same as input"
+	  memoryWordLength	  "16"
+	  memoryFracLength	  "15"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  ScaleValues		  "1"
+	  scaleValueFracLength	  "14"
+	  tapSumMode		  "Same as input"
+	  tapSumWordLength	  "32"
+	  tapSumFracLength	  "30"
+	  stageIOMode		  "Same as input"
+	  stageIOWordLength	  "16"
+	  stageInFracLength	  "15"
+	  stageOutFracLength	  "15"
+	  LockScale		  off
+	  FilterSource		  "Input port(s)"
+	  dfiltObjectName	  "dfilt.dffir([1 2 1])"
+	  multiplicandMode	  "Same as output"
+	  multiplicandWordLength  "32"
+	  multiplicandFracLength  "30"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [490, 261, 530, 279]
+	  GotoTag		  "band_1"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1]
+	  Position		  [430, 228, 435, 312]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem2"
+	  Ports			  [4, 2]
+	  Position		  [59, 205, 301, 295]
+	  Orientation		  "up"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskInitialization	  "\n"
+	  MaskDisplay		  "disp('ParEq')\nport_label('input',1,'G0');"
+"\nport_label('input',2,'G');\nport_label('input',3,'w0');\nport_label('input'"
+",4,'Dw');\n\nport_label('output',1,'Num');\nport_label('output',2,'Den');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Subsystem2"
+	    Location		    [201, 196, 924, 627]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [55, 63, 85, 77]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2"
+	      Position		      [45, 113, 75, 127]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In4"
+	      Position		      [270, 213, 300, 227]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In5"
+	      Position		      [270, 263, 300, 277]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Abs
+	      Name		      "Abs"
+	      Position		      [90, 145, 110, 165]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [40, 185, 70, 215]
+	      Value		      "NdB"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [170, 176, 215, 209]
+	      CollapseMode	      "All dimensions"
+	      InputSameDT	      off
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [115, 178, 140, 207]
+	      CollapseMode	      "All dimensions"
+	      InputSameDT	      off
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "S-Function"
+	      Ports		      [5, 2]
+	      Position		      [415, 48, 560, 292]
+	      FunctionName	      "parEq"
+	      MaskType		      "Parametric Equalizer Coefficients "
+	      MaskDescription	      "Generate the filter coefficients based "
+"on the band values."
+	      MaskHelp		      "Based on Parametric Equalizer filter de"
+"sign by Orfanidis."
+	      MaskDisplay	      "disp('ParEq')\nport_label('input',1,'G0"
+"');\nport_label('input',2,'G');\nport_label('input',3,'GB');\nport_label('inp"
+"ut',4,'w0');\nport_label('input',5,'Dw');\n\nport_label('output',1,'Num');\np"
+"ort_label('output',2,'Den');"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Signum
+	      Name		      "Sign"
+	      Position		      [139, 140, 171, 160]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem1"
+	      Ports		      [1, 1]
+	      Position		      [260, 62, 320, 78]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem1"
+		Location		[356, 227, 936, 528]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem2"
+	      Ports		      [1, 1]
+	      Position		      [260, 112, 320, 128]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem2"
+		Location		[582, 402, 827, 484]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem3"
+	      Ports		      [1, 1]
+	      Position		      [260, 162, 320, 178]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem3"
+		Location		[582, 402, 827, 484]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [630, 118, 660, 132]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out2"
+	      Position		      [630, 213, 660, 227]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "In5"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "S-Function"
+	      SrcPort		      2
+	      Points		      [0, -10]
+	      DstBlock		      "Out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In4"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "In2"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		DstBlock		"Abs"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[55, 0]
+		Branch {
+		  DstBlock		  "Subsystem2"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Sign"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "S-Function"
+	      SrcPort		      1
+	      Points		      [0, 15]
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Subsystem1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem3"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem2"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem1"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Abs"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [0, 5]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sign"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [0, -25]
+	      DstBlock		      "Subsystem3"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [625, 103, 655, 117]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  1
+	  Points		  [0, -90; 260, 0]
+	  Branch {
+	    DstBlock		    "Digital Filter"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 140]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  2
+	  Points		  [0, -35; 110, 0]
+	  Branch {
+	    DstBlock		    "Digital Filter"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 125]
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Digital Filter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Digital Filter"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In3"
+	  SrcPort		  1
+	  DstBlock		  "Subsystem2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In4"
+	  SrcPort		  1
+	  DstBlock		  "Subsystem2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "In5"
+	  SrcPort		  1
+	  DstBlock		  "Subsystem2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Subsystem2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "band2"
+      Ports		      [4, 1]
+      Position		      [365, 164, 455, 276]
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      ShowName		      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Parametric Equalizer"
+      MaskDescription	      "This block contains the second order IIR filter"
+" which functions as a parametric equalizer. The Inputs to this block, in orde"
+"r, are the Audio In, the peak gain of the equalizer at the center frequency, "
+"the center frequency itself, and the bandwidth of the filter around the cente"
+"r frequency. Currently the bandedges are defined as those frequency where the"
+" gain falls off to one-half the center frequency peak gain."
+      MaskPromptString	      "Reference gain G0|Bandwidth Gain|Attenuation Fa"
+"ctor (Bandwidth Gain = af*Peak Gain; 0<af<1)"
+      MaskStyleString	      "edit,popup(3 dB(1/2 Power)|User-Defined),edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "|parEqMasking|"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,off"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "G0=@1;gbPopup=@2;NdB=@3;"
+      MaskDisplay	      "port_label ('input',1,'Audio In');\nport_label "
+"('input',2,'Peak Gain');\nport_label ('input',3,'Center Frequency');\nport_la"
+"bel ('input',4,'Bandwidth');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|User-Defined|.707"
+      MaskTabNameString	      ",,"
+      System {
+	Name			"band2"
+	Location		[155, 211, 1037, 696]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 48, 95, 62]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In3"
+	  Position		  [120, 380, 160, 410]
+	  Orientation		  "up"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In4"
+	  Position		  [185, 330, 225, 360]
+	  Orientation		  "up"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In5"
+	  Position		  [245, 365, 285, 395]
+	  Orientation		  "up"
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [45, 345, 75, 375]
+	  Orientation		  "up"
+	  Value			  "G0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Digital Filter"
+	  Ports			  [3, 1]
+	  Position		  [420, 25, 535, 195]
+	  ShowName		  off
+	  DialogController	  "dspdialog.DigitalFilter"
+	  DialogControllerArgs	  "DataTag1"
+	  SourceBlock		  "dsparch4/Digital Filter"
+	  SourceType		  "Digital Filter"
+	  TypePopup		  "IIR (poles & zeros)"
+	  IIRFiltStruct		  "Direct form II transposed"
+	  AllPoleFiltStruct	  "Direct form"
+	  FIRFiltStruct		  "Direct form"
+	  CoeffSource		  "Input port(s)"
+	  NumCoeffs		  "[1 2]"
+	  DenCoeffs		  "[1 0.1]"
+	  BiQuadCoeffs		  "[1 0.3 0.4 1 0.1 0.2]"
+	  LatticeCoeffs		  "[0.2 0.4]"
+	  denIgnore		  on
+	  FiltPerSampPopup	  "One filter per frame"
+	  IC			  "0"
+	  ICnum			  "0"
+	  ICden			  "0"
+	  additionalParams	  off
+	  allowOverrides	  on
+	  showCoeff		  off
+	  firstCoeffMode	  "Same as input"
+	  firstCoeffWordLength	  "16"
+	  firstCoeffFracLength	  "15"
+	  secondCoeffMode	  "Same as numerator"
+	  secondCoeffWordLength	  "16"
+	  secondCoeffFracLength	  "15"
+	  thirdCoeffMode	  "Same as input"
+	  thirdCoeffWordLength	  "16"
+	  thirdCoeffFracLength	  "15"
+	  showOut		  off
+	  outputMode		  "Same as input"
+	  outputWordLength	  "16"
+	  outputFracLength	  "15"
+	  showAcc		  off
+	  accumMode		  "Same as product output"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  showMpy		  off
+	  prodOutputMode	  "Same as input"
+	  prodOutputWordLength	  "32"
+	  prodOutputFracLength	  "30"
+	  showMem		  off
+	  memoryMode		  "Same as input"
+	  memoryWordLength	  "16"
+	  memoryFracLength	  "15"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  ScaleValues		  "1"
+	  scaleValueFracLength	  "14"
+	  tapSumMode		  "Same as input"
+	  tapSumWordLength	  "32"
+	  tapSumFracLength	  "30"
+	  stageIOMode		  "Same as input"
+	  stageIOWordLength	  "16"
+	  stageInFracLength	  "15"
+	  stageOutFracLength	  "15"
+	  LockScale		  off
+	  FilterSource		  "Input port(s)"
+	  dfiltObjectName	  "dfilt.dffir([1 2 1])"
+	  multiplicandMode	  "Same as output"
+	  multiplicandWordLength  "32"
+	  multiplicandFracLength  "30"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [500, 266, 540, 284]
+	  GotoTag		  "band_2"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1]
+	  Position		  [440, 233, 445, 317]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem2"
+	  Ports			  [4, 2]
+	  Position		  [59, 205, 301, 295]
+	  Orientation		  "up"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskInitialization	  "\n"
+	  MaskDisplay		  "disp('ParEq')\nport_label('input',1,'G0');"
+"\nport_label('input',2,'G');\nport_label('input',3,'w0');\nport_label('input'"
+",4,'Dw');\n\nport_label('output',1,'Num');\nport_label('output',2,'Den');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Subsystem2"
+	    Location		    [48, 158, 930, 643]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [55, 63, 85, 77]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2"
+	      Position		      [45, 113, 75, 127]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In4"
+	      Position		      [260, 198, 290, 212]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In5"
+	      Position		      [250, 233, 280, 247]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Abs
+	      Name		      "Abs"
+	      Position		      [90, 145, 110, 165]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [40, 185, 70, 215]
+	      Value		      "NdB"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [170, 176, 215, 209]
+	      CollapseMode	      "All dimensions"
+	      InputSameDT	      off
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [115, 178, 140, 207]
+	      CollapseMode	      "All dimensions"
+	      InputSameDT	      off
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "S-Function"
+	      Ports		      [5, 2]
+	      Position		      [415, 48, 560, 292]
+	      FunctionName	      "parEq"
+	      MaskType		      "Parametric Equalizer Coefficients "
+	      MaskDescription	      "Generate the filter coefficients based "
+"on the band values."
+	      MaskHelp		      "Based on Parametric Equalizer filter de"
+"sign by Orfanidis."
+	      MaskDisplay	      "disp('ParEq')\nport_label('input',1,'G0"
+"');\nport_label('input',2,'G');\nport_label('input',3,'GB');\nport_label('inp"
+"ut',4,'w0');\nport_label('input',5,'Dw');\n\nport_label('output',1,'Num');\np"
+"ort_label('output',2,'Den');"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Signum
+	      Name		      "Sign"
+	      Position		      [139, 140, 171, 160]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem1"
+	      Ports		      [1, 1]
+	      Position		      [260, 62, 320, 78]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem1"
+		Location		[118, 125, 1000, 610]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem2"
+	      Ports		      [1, 1]
+	      Position		      [260, 112, 320, 128]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem2"
+		Location		[582, 402, 827, 484]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem3"
+	      Ports		      [1, 1]
+	      Position		      [260, 162, 320, 178]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem3"
+		Location		[582, 402, 827, 484]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [630, 118, 660, 132]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out2"
+	      Position		      [630, 213, 660, 227]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [0, -25]
+	      DstBlock		      "Subsystem3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sign"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [0, 5]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Abs"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem1"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem2"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem3"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Subsystem1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "S-Function"
+	      SrcPort		      1
+	      Points		      [0, 15]
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In2"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[55, 0]
+		Branch {
+		  DstBlock		  "Sign"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Subsystem2"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"Abs"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "In4"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, 15]
+	      DstBlock		      "S-Function"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "S-Function"
+	      SrcPort		      2
+	      Points		      [0, -10]
+	      DstBlock		      "Out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In5"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, 30]
+	      DstBlock		      "S-Function"
+	      DstPort		      5
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [625, 103, 655, 117]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, -10; 30, 0]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In5"
+	  SrcPort		  1
+	  Points		  [0, -50]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "In4"
+	  SrcPort		  1
+	  Points		  [0, -15]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "In3"
+	  SrcPort		  1
+	  Points		  [0, -65]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Digital Filter"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Digital Filter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  2
+	  Points		  [0, -35; 125, 0]
+	  Branch {
+	    DstBlock		    "Digital Filter"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 130]
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  1
+	  Points		  [0, -90; 270, 0]
+	  Branch {
+	    DstBlock		    "Digital Filter"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 0; 0, 145]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "band3"
+      Ports		      [4, 1]
+      Position		      [365, 294, 455, 406]
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      ShowName		      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Parametric Equalizer"
+      MaskDescription	      "This block contains the second order IIR filter"
+" which functions as a parametric equalizer. The Inputs to this block, in orde"
+"r, are the Audio In, the peak gain of the equalizer at the center frequency, "
+"the center frequency itself, and the bandwidth of the filter around the cente"
+"r frequency. Currently the bandedges are defined as those frequency where the"
+" gain falls off to one-half the center frequency peak gain."
+      MaskPromptString	      "Reference gain G0|Bandwidth Gain|Attenuation Fa"
+"ctor (Bandwidth Gain = af*Peak Gain; 0<af<1)"
+      MaskStyleString	      "edit,popup(3 dB(1/2 Power)|User-Defined),edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "|parEqMasking|"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,off"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "G0=@1;gbPopup=@2;NdB=@3;"
+      MaskDisplay	      "port_label ('input',1,'Audio In');\nport_label "
+"('input',2,'Peak Gain');\nport_label ('input',3,'Center Frequency');\nport_la"
+"bel ('input',4,'Bandwidth');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|User-Defined|.707"
+      MaskTabNameString	      ",,"
+      System {
+	Name			"band3"
+	Location		[48, 158, 930, 643]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 48, 95, 62]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In3"
+	  Position		  [120, 380, 160, 410]
+	  Orientation		  "up"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In4"
+	  Position		  [185, 330, 225, 360]
+	  Orientation		  "up"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In5"
+	  Position		  [245, 365, 285, 395]
+	  Orientation		  "up"
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [45, 345, 75, 375]
+	  Orientation		  "up"
+	  Value			  "G0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Digital Filter"
+	  Ports			  [3, 1]
+	  Position		  [420, 25, 535, 195]
+	  ShowName		  off
+	  DialogController	  "dspdialog.DigitalFilter"
+	  DialogControllerArgs	  "DataTag2"
+	  SourceBlock		  "dsparch4/Digital Filter"
+	  SourceType		  "Digital Filter"
+	  TypePopup		  "IIR (poles & zeros)"
+	  IIRFiltStruct		  "Direct form II transposed"
+	  AllPoleFiltStruct	  "Direct form"
+	  FIRFiltStruct		  "Direct form"
+	  CoeffSource		  "Input port(s)"
+	  NumCoeffs		  "[1 2]"
+	  DenCoeffs		  "[1 0.1]"
+	  BiQuadCoeffs		  "[1 0.3 0.4 1 0.1 0.2]"
+	  LatticeCoeffs		  "[0.2 0.4]"
+	  denIgnore		  on
+	  FiltPerSampPopup	  "One filter per frame"
+	  IC			  "0"
+	  ICnum			  "0"
+	  ICden			  "0"
+	  additionalParams	  off
+	  allowOverrides	  on
+	  showCoeff		  off
+	  firstCoeffMode	  "Same as input"
+	  firstCoeffWordLength	  "16"
+	  firstCoeffFracLength	  "15"
+	  secondCoeffMode	  "Same as numerator"
+	  secondCoeffWordLength	  "16"
+	  secondCoeffFracLength	  "15"
+	  thirdCoeffMode	  "Same as input"
+	  thirdCoeffWordLength	  "16"
+	  thirdCoeffFracLength	  "15"
+	  showOut		  off
+	  outputMode		  "Same as input"
+	  outputWordLength	  "16"
+	  outputFracLength	  "15"
+	  showAcc		  off
+	  accumMode		  "Same as product output"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  showMpy		  off
+	  prodOutputMode	  "Same as input"
+	  prodOutputWordLength	  "32"
+	  prodOutputFracLength	  "30"
+	  showMem		  off
+	  memoryMode		  "Same as input"
+	  memoryWordLength	  "16"
+	  memoryFracLength	  "15"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  ScaleValues		  "1"
+	  scaleValueFracLength	  "14"
+	  tapSumMode		  "Same as input"
+	  tapSumWordLength	  "32"
+	  tapSumFracLength	  "30"
+	  stageIOMode		  "Same as input"
+	  stageIOWordLength	  "16"
+	  stageInFracLength	  "15"
+	  stageOutFracLength	  "15"
+	  LockScale		  off
+	  FilterSource		  "Input port(s)"
+	  dfiltObjectName	  "dfilt.dffir([1 2 1])"
+	  multiplicandMode	  "Same as output"
+	  multiplicandWordLength  "32"
+	  multiplicandFracLength  "30"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [510, 261, 550, 279]
+	  GotoTag		  "band_3"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1]
+	  Position		  [450, 228, 455, 312]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem2"
+	  Ports			  [4, 2]
+	  Position		  [59, 205, 301, 295]
+	  Orientation		  "up"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskInitialization	  "\n"
+	  MaskDisplay		  "disp('ParEq')\nport_label('input',1,'G0');"
+"\nport_label('input',2,'G');\nport_label('input',3,'w0');\nport_label('input'"
+",4,'Dw');\n\nport_label('output',1,'Num');\nport_label('output',2,'Den');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Subsystem2"
+	    Location		    [48, 158, 930, 643]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [55, 63, 85, 77]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2"
+	      Position		      [45, 113, 75, 127]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In4"
+	      Position		      [260, 198, 290, 212]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In5"
+	      Position		      [250, 233, 280, 247]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Abs
+	      Name		      "Abs"
+	      Position		      [90, 145, 110, 165]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [40, 185, 70, 215]
+	      Value		      "NdB"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [170, 176, 215, 209]
+	      CollapseMode	      "All dimensions"
+	      InputSameDT	      off
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [115, 178, 140, 207]
+	      CollapseMode	      "All dimensions"
+	      InputSameDT	      off
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "S-Function"
+	      Ports		      [5, 2]
+	      Position		      [415, 48, 560, 292]
+	      FunctionName	      "parEq"
+	      MaskType		      "Parametric Equalizer Coefficients "
+	      MaskDescription	      "Generate the filter coefficients based "
+"on the band values."
+	      MaskHelp		      "Based on Parametric Equalizer filter de"
+"sign by Orfanidis."
+	      MaskDisplay	      "disp('ParEq')\nport_label('input',1,'G0"
+"');\nport_label('input',2,'G');\nport_label('input',3,'GB');\nport_label('inp"
+"ut',4,'w0');\nport_label('input',5,'Dw');\n\nport_label('output',1,'Num');\np"
+"ort_label('output',2,'Den');"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Signum
+	      Name		      "Sign"
+	      Position		      [139, 140, 171, 160]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem1"
+	      Ports		      [1, 1]
+	      Position		      [260, 62, 320, 78]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem1"
+		Location		[118, 125, 1000, 610]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem2"
+	      Ports		      [1, 1]
+	      Position		      [260, 112, 320, 128]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem2"
+		Location		[582, 402, 827, 484]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem3"
+	      Ports		      [1, 1]
+	      Position		      [260, 162, 320, 178]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem3"
+		Location		[582, 402, 827, 484]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [630, 118, 660, 132]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out2"
+	      Position		      [630, 213, 660, 227]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "In5"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, 30]
+	      DstBlock		      "S-Function"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "S-Function"
+	      SrcPort		      2
+	      Points		      [0, -10]
+	      DstBlock		      "Out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In4"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, 15]
+	      DstBlock		      "S-Function"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "In2"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		DstBlock		"Abs"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[55, 0]
+		Branch {
+		  DstBlock		  "Subsystem2"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Sign"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "S-Function"
+	      SrcPort		      1
+	      Points		      [0, 15]
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Subsystem1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem3"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem2"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem1"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Abs"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [0, 5]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sign"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [0, -25]
+	      DstBlock		      "Subsystem3"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [625, 103, 655, 117]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  1
+	  Points		  [0, -90; 270, 0]
+	  Branch {
+	    DstBlock		    "Digital Filter"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 140]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  2
+	  Points		  [0, -35; 125, 0]
+	  Branch {
+	    DstBlock		    "Digital Filter"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 125]
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Digital Filter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Digital Filter"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In3"
+	  SrcPort		  1
+	  Points		  [0, -65]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In4"
+	  SrcPort		  1
+	  Points		  [0, -15]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "In5"
+	  SrcPort		  1
+	  Points		  [0, -50]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, -10; 30, 0]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "band4"
+      Ports		      [4, 1]
+      Position		      [365, 434, 455, 546]
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      ShowName		      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Parametric Equalizer"
+      MaskDescription	      "This block contains the second order IIR filter"
+" which functions as a parametric equalizer. The Inputs to this block, in orde"
+"r, are the Audio In, the peak gain of the equalizer at the center frequency, "
+"the center frequency itself, and the bandwidth of the filter around the cente"
+"r frequency. Currently the bandedges are defined as those frequency where the"
+" gain falls off to one-half the center frequency peak gain."
+      MaskPromptString	      "Reference gain G0|Bandwidth Gain|Attenuation Fa"
+"ctor (Bandwidth Gain = af*Peak Gain; 0<af<1)"
+      MaskStyleString	      "edit,popup(3 dB(1/2 Power)|User-Defined),edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "|parEqMasking|"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,off"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "G0=@1;gbPopup=@2;NdB=@3;"
+      MaskDisplay	      "port_label ('input',1,'Audio In');\nport_label "
+"('input',2,'Peak Gain');\nport_label ('input',3,'Center Frequency');\nport_la"
+"bel ('input',4,'Bandwidth');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|User-Defined|.707"
+      MaskTabNameString	      ",,"
+      System {
+	Name			"band4"
+	Location		[354, 449, 1236, 934]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 48, 95, 62]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In3"
+	  Position		  [120, 380, 160, 410]
+	  Orientation		  "up"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In4"
+	  Position		  [185, 330, 225, 360]
+	  Orientation		  "up"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In5"
+	  Position		  [245, 365, 285, 395]
+	  Orientation		  "up"
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [45, 345, 75, 375]
+	  Orientation		  "up"
+	  Value			  "G0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Digital Filter"
+	  Ports			  [3, 1]
+	  Position		  [420, 25, 535, 195]
+	  ShowName		  off
+	  DialogController	  "dspdialog.DigitalFilter"
+	  DialogControllerArgs	  "DataTag3"
+	  SourceBlock		  "dsparch4/Digital Filter"
+	  SourceType		  "Digital Filter"
+	  TypePopup		  "IIR (poles & zeros)"
+	  IIRFiltStruct		  "Direct form II transposed"
+	  AllPoleFiltStruct	  "Direct form"
+	  FIRFiltStruct		  "Direct form"
+	  CoeffSource		  "Input port(s)"
+	  NumCoeffs		  "[1 2]"
+	  DenCoeffs		  "[1 0.1]"
+	  BiQuadCoeffs		  "[1 0.3 0.4 1 0.1 0.2]"
+	  LatticeCoeffs		  "[0.2 0.4]"
+	  denIgnore		  on
+	  FiltPerSampPopup	  "One filter per frame"
+	  IC			  "0"
+	  ICnum			  "0"
+	  ICden			  "0"
+	  additionalParams	  off
+	  allowOverrides	  on
+	  showCoeff		  off
+	  firstCoeffMode	  "Same as input"
+	  firstCoeffWordLength	  "16"
+	  firstCoeffFracLength	  "15"
+	  secondCoeffMode	  "Same as numerator"
+	  secondCoeffWordLength	  "16"
+	  secondCoeffFracLength	  "15"
+	  thirdCoeffMode	  "Same as input"
+	  thirdCoeffWordLength	  "16"
+	  thirdCoeffFracLength	  "15"
+	  showOut		  off
+	  outputMode		  "Same as input"
+	  outputWordLength	  "16"
+	  outputFracLength	  "15"
+	  showAcc		  off
+	  accumMode		  "Same as product output"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  showMpy		  off
+	  prodOutputMode	  "Same as input"
+	  prodOutputWordLength	  "32"
+	  prodOutputFracLength	  "30"
+	  showMem		  off
+	  memoryMode		  "Same as input"
+	  memoryWordLength	  "16"
+	  memoryFracLength	  "15"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  ScaleValues		  "1"
+	  scaleValueFracLength	  "14"
+	  tapSumMode		  "Same as input"
+	  tapSumWordLength	  "32"
+	  tapSumFracLength	  "30"
+	  stageIOMode		  "Same as input"
+	  stageIOWordLength	  "16"
+	  stageInFracLength	  "15"
+	  stageOutFracLength	  "15"
+	  LockScale		  off
+	  FilterSource		  "Input port(s)"
+	  dfiltObjectName	  "dfilt.dffir([1 2 1])"
+	  multiplicandMode	  "Same as output"
+	  multiplicandWordLength  "32"
+	  multiplicandFracLength  "30"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [500, 266, 540, 284]
+	  GotoTag		  "band_4"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1]
+	  Position		  [440, 233, 445, 317]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem2"
+	  Ports			  [4, 2]
+	  Position		  [59, 205, 301, 295]
+	  Orientation		  "up"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskInitialization	  "\n"
+	  MaskDisplay		  "disp('ParEq')\nport_label('input',1,'G0');"
+"\nport_label('input',2,'G');\nport_label('input',3,'w0');\nport_label('input'"
+",4,'Dw');\n\nport_label('output',1,'Num');\nport_label('output',2,'Den');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Subsystem2"
+	    Location		    [48, 158, 930, 643]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [55, 63, 85, 77]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2"
+	      Position		      [45, 113, 75, 127]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In4"
+	      Position		      [260, 198, 290, 212]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In5"
+	      Position		      [250, 233, 280, 247]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Abs
+	      Name		      "Abs"
+	      Position		      [90, 145, 110, 165]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [40, 185, 70, 215]
+	      Value		      "NdB"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [170, 176, 215, 209]
+	      CollapseMode	      "All dimensions"
+	      InputSameDT	      off
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [115, 178, 140, 207]
+	      CollapseMode	      "All dimensions"
+	      InputSameDT	      off
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "S-Function"
+	      Ports		      [5, 2]
+	      Position		      [415, 48, 560, 292]
+	      FunctionName	      "parEq"
+	      MaskType		      "Parametric Equalizer Coefficients "
+	      MaskDescription	      "Generate the filter coefficients based "
+"on the band values."
+	      MaskHelp		      "Based on Parametric Equalizer filter de"
+"sign by Orfanidis."
+	      MaskDisplay	      "disp('ParEq')\nport_label('input',1,'G0"
+"');\nport_label('input',2,'G');\nport_label('input',3,'GB');\nport_label('inp"
+"ut',4,'w0');\nport_label('input',5,'Dw');\n\nport_label('output',1,'Num');\np"
+"ort_label('output',2,'Den');"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Signum
+	      Name		      "Sign"
+	      Position		      [139, 140, 171, 160]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem1"
+	      Ports		      [1, 1]
+	      Position		      [260, 62, 320, 78]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem1"
+		Location		[118, 125, 1000, 610]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem2"
+	      Ports		      [1, 1]
+	      Position		      [260, 112, 320, 128]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem2"
+		Location		[582, 402, 827, 484]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem3"
+	      Ports		      [1, 1]
+	      Position		      [260, 162, 320, 178]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem3"
+		Location		[582, 402, 827, 484]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [630, 118, 660, 132]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out2"
+	      Position		      [630, 213, 660, 227]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [0, -25]
+	      DstBlock		      "Subsystem3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sign"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [0, 5]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Abs"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem1"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem2"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem3"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Subsystem1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "S-Function"
+	      SrcPort		      1
+	      Points		      [0, 15]
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In2"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		Points			[55, 0]
+		Branch {
+		  DstBlock		  "Sign"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Subsystem2"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"Abs"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "In4"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, 15]
+	      DstBlock		      "S-Function"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "S-Function"
+	      SrcPort		      2
+	      Points		      [0, -10]
+	      DstBlock		      "Out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In5"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, 30]
+	      DstBlock		      "S-Function"
+	      DstPort		      5
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [625, 103, 655, 117]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, -10; 30, 0]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In5"
+	  SrcPort		  1
+	  Points		  [0, -50]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "In4"
+	  SrcPort		  1
+	  Points		  [0, -15]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "In3"
+	  SrcPort		  1
+	  Points		  [0, -65]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Digital Filter"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Digital Filter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  2
+	  Points		  [0, -35; 125, 0]
+	  Branch {
+	    DstBlock		    "Digital Filter"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 130]
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  1
+	  Points		  [0, -90; 270, 0]
+	  Branch {
+	    DstBlock		    "Digital Filter"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 0; 0, 145]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "band5"
+      Ports		      [4, 1]
+      Position		      [365, 569, 455, 681]
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      ShowName		      off
+      MinAlgLoopOccurrences   off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      MaskHideContents	      off
+      MaskType		      "Parametric Equalizer"
+      MaskDescription	      "This block contains the second order IIR filter"
+" which functions as a parametric equalizer. The Inputs to this block, in orde"
+"r, are the Audio In, the peak gain of the equalizer at the center frequency, "
+"the center frequency itself, and the bandwidth of the filter around the cente"
+"r frequency. Currently the bandedges are defined as those frequency where the"
+" gain falls off to one-half the center frequency peak gain."
+      MaskPromptString	      "Reference gain G0|Bandwidth Gain|Attenuation Fa"
+"ctor (Bandwidth Gain = af*Peak Gain; 0<af<1)"
+      MaskStyleString	      "edit,popup(3 dB(1/2 Power)|User-Defined),edit"
+      MaskTunableValueString  "on,on,on"
+      MaskCallbackString      "|parEqMasking|"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,off"
+      MaskToolTipString	      "on,on,on"
+      MaskVarAliasString      ",,"
+      MaskVariables	      "G0=@1;gbPopup=@2;NdB=@3;"
+      MaskDisplay	      "port_label ('input',1,'Audio In');\nport_label "
+"('input',2,'Peak Gain');\nport_label ('input',3,'Center Frequency');\nport_la"
+"bel ('input',4,'Bandwidth');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "0|User-Defined|.707"
+      MaskTabNameString	      ",,"
+      System {
+	Name			"band5"
+	Location		[98, 220, 980, 705]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  Position		  [65, 48, 95, 62]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In3"
+	  Position		  [120, 380, 160, 410]
+	  Orientation		  "up"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In4"
+	  Position		  [185, 330, 225, 360]
+	  Orientation		  "up"
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In5"
+	  Position		  [245, 365, 285, 395]
+	  Orientation		  "up"
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [45, 345, 75, 375]
+	  Orientation		  "up"
+	  Value			  "G0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Digital Filter"
+	  Ports			  [3, 1]
+	  Position		  [420, 25, 535, 195]
+	  ShowName		  off
+	  DialogController	  "dspdialog.DigitalFilter"
+	  DialogControllerArgs	  "DataTag4"
+	  SourceBlock		  "dsparch4/Digital Filter"
+	  SourceType		  "Digital Filter"
+	  TypePopup		  "IIR (poles & zeros)"
+	  IIRFiltStruct		  "Direct form II transposed"
+	  AllPoleFiltStruct	  "Direct form"
+	  FIRFiltStruct		  "Direct form"
+	  CoeffSource		  "Input port(s)"
+	  NumCoeffs		  "[1 2]"
+	  DenCoeffs		  "[1 0.1]"
+	  BiQuadCoeffs		  "[1 0.3 0.4 1 0.1 0.2]"
+	  LatticeCoeffs		  "[0.2 0.4]"
+	  denIgnore		  on
+	  FiltPerSampPopup	  "One filter per frame"
+	  IC			  "0"
+	  ICnum			  "0"
+	  ICden			  "0"
+	  additionalParams	  off
+	  allowOverrides	  on
+	  showCoeff		  off
+	  firstCoeffMode	  "Same as input"
+	  firstCoeffWordLength	  "16"
+	  firstCoeffFracLength	  "15"
+	  secondCoeffMode	  "Same as numerator"
+	  secondCoeffWordLength	  "16"
+	  secondCoeffFracLength	  "15"
+	  thirdCoeffMode	  "Same as input"
+	  thirdCoeffWordLength	  "16"
+	  thirdCoeffFracLength	  "15"
+	  showOut		  off
+	  outputMode		  "Same as input"
+	  outputWordLength	  "16"
+	  outputFracLength	  "15"
+	  showAcc		  off
+	  accumMode		  "Same as product output"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  showMpy		  off
+	  prodOutputMode	  "Same as input"
+	  prodOutputWordLength	  "32"
+	  prodOutputFracLength	  "30"
+	  showMem		  off
+	  memoryMode		  "Same as input"
+	  memoryWordLength	  "16"
+	  memoryFracLength	  "15"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  ScaleValues		  "1"
+	  scaleValueFracLength	  "14"
+	  tapSumMode		  "Same as input"
+	  tapSumWordLength	  "32"
+	  tapSumFracLength	  "30"
+	  stageIOMode		  "Same as input"
+	  stageIOWordLength	  "16"
+	  stageInFracLength	  "15"
+	  stageOutFracLength	  "15"
+	  LockScale		  off
+	  FilterSource		  "Input port(s)"
+	  dfiltObjectName	  "dfilt.dffir([1 2 1])"
+	  multiplicandMode	  "Same as output"
+	  multiplicandWordLength  "32"
+	  multiplicandFracLength  "30"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "Goto"
+	  Position		  [510, 261, 550, 279]
+	  GotoTag		  "band_5"
+	  TagVisibility		  "global"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1]
+	  Position		  [450, 228, 455, 312]
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Subsystem2"
+	  Ports			  [4, 2]
+	  Position		  [59, 205, 301, 295]
+	  Orientation		  "up"
+	  MinAlgLoopOccurrences	  off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  MaskHideContents	  off
+	  MaskInitialization	  "\n"
+	  MaskDisplay		  "disp('ParEq')\nport_label('input',1,'G0');"
+"\nport_label('input',2,'G');\nport_label('input',3,'w0');\nport_label('input'"
+",4,'Dw');\n\nport_label('output',1,'Num');\nport_label('output',2,'Den');"
+	  MaskIconFrame		  on
+	  MaskIconOpaque	  on
+	  MaskIconRotate	  "none"
+	  MaskIconUnits		  "autoscale"
+	  System {
+	    Name		    "Subsystem2"
+	    Location		    [48, 158, 930, 643]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      Position		      [55, 63, 85, 77]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2"
+	      Position		      [45, 113, 75, 127]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In4"
+	      Position		      [260, 198, 290, 212]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In5"
+	      Position		      [250, 233, 280, 247]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Abs
+	      Name		      "Abs"
+	      Position		      [90, 145, 110, 165]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      Position		      [40, 185, 70, 215]
+	      Value		      "NdB"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product"
+	      Ports		      [2, 1]
+	      Position		      [170, 176, 215, 209]
+	      CollapseMode	      "All dimensions"
+	      InputSameDT	      off
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      Product
+	      Name		      "Product1"
+	      Ports		      [2, 1]
+	      Position		      [115, 178, 140, 207]
+	      CollapseMode	      "All dimensions"
+	      InputSameDT	      off
+	      RndMeth		      "Floor"
+	    }
+	    Block {
+	      BlockType		      "S-Function"
+	      Name		      "S-Function"
+	      Ports		      [5, 2]
+	      Position		      [415, 48, 560, 292]
+	      FunctionName	      "parEq"
+	      MaskType		      "Parametric Equalizer Coefficients "
+	      MaskDescription	      "Generate the filter coefficients based "
+"on the band values."
+	      MaskHelp		      "Based on Parametric Equalizer filter de"
+"sign by Orfanidis."
+	      MaskDisplay	      "disp('ParEq')\nport_label('input',1,'G0"
+"');\nport_label('input',2,'G');\nport_label('input',3,'GB');\nport_label('inp"
+"ut',4,'w0');\nport_label('input',5,'Dw');\n\nport_label('output',1,'Num');\np"
+"ort_label('output',2,'Den');"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Signum
+	      Name		      "Sign"
+	      Position		      [139, 140, 171, 160]
+	      Orientation	      "down"
+	      NamePlacement	      "alternate"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem1"
+	      Ports		      [1, 1]
+	      Position		      [260, 62, 320, 78]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem1"
+		Location		[118, 125, 1000, 610]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem2"
+	      Ports		      [1, 1]
+	      Position		      [260, 112, 320, 128]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem2"
+		Location		[582, 402, 827, 484]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Subsystem3"
+	      Ports		      [1, 1]
+	      Position		      [260, 162, 320, 178]
+	      ShowName		      off
+	      MinAlgLoopOccurrences   off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      MaskHideContents	      off
+	      MaskType		      "DbtoReal"
+	      MaskDescription	      "Converts inputs in dB to real values. F"
+"ormula --> 10^(u/20)"
+	      MaskDisplay	      "disp('dB->Real')"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	      System {
+		Name			"Subsystem3"
+		Location		[582, 402, 827, 484]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	"[0.500000, 0.500000, 0.500000, 0.5000"
+"00]"
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  Position		  [25, 33, 55, 47]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  Position		  [80, 25, 110, 55]
+		  Gain			  "1/20"
+		}
+		Block {
+		  BlockType		  Math
+		  Name			  "Math\nFunction"
+		  Ports			  [1, 1]
+		  Position		  [135, 25, 165, 55]
+		  Operator		  "10^u"
+		  OutputSignalType	  "real"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  Position		  [190, 33, 220, 47]
+		  IconDisplay		  "Port number"
+		  BusOutputAsStruct	  off
+		}
+		Line {
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Math\nFunction"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Math\nFunction"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      Position		      [630, 118, 660, 132]
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out2"
+	      Position		      [630, 213, 660, 227]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      BusOutputAsStruct	      off
+	    }
+	    Line {
+	      SrcBlock		      "In5"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, 30]
+	      DstBlock		      "S-Function"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "S-Function"
+	      SrcPort		      2
+	      Points		      [0, -10]
+	      DstBlock		      "Out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In4"
+	      SrcPort		      1
+	      Points		      [35, 0; 0, 15]
+	      DstBlock		      "S-Function"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "In2"
+	      SrcPort		      1
+	      Points		      [0, 0; 20, 0]
+	      Branch {
+		DstBlock		"Abs"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[55, 0]
+		Branch {
+		  DstBlock		  "Subsystem2"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "Sign"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "S-Function"
+	      SrcPort		      1
+	      Points		      [0, 15]
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Subsystem1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem3"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem2"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Subsystem1"
+	      SrcPort		      1
+	      DstBlock		      "S-Function"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Abs"
+	      SrcPort		      1
+	      DstBlock		      "Product1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product1"
+	      SrcPort		      1
+	      Points		      [0, 5]
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Sign"
+	      SrcPort		      1
+	      DstBlock		      "Product"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Product"
+	      SrcPort		      1
+	      Points		      [0, -25]
+	      DstBlock		      "Subsystem3"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  Position		  [625, 103, 655, 117]
+	  IconDisplay		  "Port number"
+	  BusOutputAsStruct	  off
+	}
+	Line {
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  1
+	  Points		  [0, -90; 270, 0]
+	  Branch {
+	    DstBlock		    "Digital Filter"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 140]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Subsystem2"
+	  SrcPort		  2
+	  Points		  [0, -35; 125, 0]
+	  Branch {
+	    DstBlock		    "Digital Filter"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 125]
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Digital Filter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Digital Filter"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In3"
+	  SrcPort		  1
+	  Points		  [0, -65]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "In4"
+	  SrcPort		  1
+	  Points		  [0, -15]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "In5"
+	  SrcPort		  1
+	  Points		  [0, -50]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, -10; 30, 0]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Goto"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "PeakGain2"
+      SrcPort		      1
+      DstBlock		      "band2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "CenterFreq2"
+      SrcPort		      1
+      DstBlock		      "band2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "BandWidth2"
+      SrcPort		      1
+      DstBlock		      "band2"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "PeakGain3"
+      SrcPort		      1
+      DstBlock		      "band3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "CenterFreq3"
+      SrcPort		      1
+      DstBlock		      "band3"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "BandWidth3"
+      SrcPort		      1
+      DstBlock		      "band3"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "From Wave\nFile"
+      SrcPort		      1
+      Points		      [15, 0; 0, -165; -210, 0]
+      Branch {
+	Points			[-130, 0]
+	DstBlock		"band1"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 305]
+	DstBlock		"Manual Switch"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "PeakGain1"
+      SrcPort		      1
+      DstBlock		      "band1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "CenterFreq1"
+      SrcPort		      1
+      DstBlock		      "band1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "BandWidth1"
+      SrcPort		      1
+      DstBlock		      "band1"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "band1"
+      SrcPort		      1
+      Points		      [5, 0; 0, 65; -125, 0; 0, 20]
+      DstBlock		      "band2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "band2"
+      SrcPort		      1
+      Points		      [5, 0; 0, 65; -125, 0; 0, 20]
+      DstBlock		      "band3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Manual Switch"
+      SrcPort		      1
+      DstBlock		      "To Wave\nDevice2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "One"
+      SrcPort		      1
+      DstBlock		      "AF_Gain"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "AF_Gain"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	Points			[0, -60; -160, 0; 0, -50]
+	DstBlock		"Product"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Goto"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Product"
+      SrcPort		      1
+      DstBlock		      "Manual Switch"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "PeakGain4"
+      SrcPort		      1
+      DstBlock		      "band4"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "CenterFreq4"
+      SrcPort		      1
+      DstBlock		      "band4"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "BandWidth4"
+      SrcPort		      1
+      DstBlock		      "band4"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "band4"
+      SrcPort		      1
+      Points		      [5, 0; 0, 65; -115, 0]
+      DstBlock		      "band5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "PeakGain5"
+      SrcPort		      1
+      DstBlock		      "band5"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "CenterFreq5"
+      SrcPort		      1
+      DstBlock		      "band5"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "BandWidth5"
+      SrcPort		      1
+      DstBlock		      "band5"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "band5"
+      SrcPort		      1
+      Points		      [20, 0; 0, -280]
+      DstBlock		      "Product"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "band3"
+      SrcPort		      1
+      Points		      [5, 0; 0, 70; -115, 0]
+      DstBlock		      "band4"
+      DstPort		      1
+    }
+    Annotation {
+      Name		      "Peak Gain"
+      Position		      [231, 72]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Center Frequency"
+      Position		      [215, 103]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Bandwidth"
+      Position		      [233, 136]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Peak Gain"
+      Position		      [231, 207]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Center Frequency"
+      Position		      [215, 238]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Bandwidth"
+      Position		      [233, 266]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Peak Gain"
+      Position		      [221, 332]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Center Frequency"
+      Position		      [205, 363]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Bandwidth"
+      Position		      [223, 396]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Peak Gain"
+      Position		      [231, 472]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Center Frequency"
+      Position		      [215, 503]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Bandwidth"
+      Position		      [233, 536]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Peak Gain"
+      Position		      [231, 607]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Center Frequency"
+      Position		      [215, 638]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+    Annotation {
+      Name		      "Bandwidth"
+      Position		      [233, 671]
+      BackgroundColor	      "[0.525490, 0.901961, 0.796078]"
+      DropShadow	      on
+    }
+  }
+}
+MatData {
+  NumRecords		  5
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    ,     8    (    !          %    "
+"\"     $    \"     0         0  ( 6UT   "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    ,     8    (    !          %    "
+"\"     $    \"     0         0  ( 6UT   "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    ,     8    (    !          %    "
+"\"     $    \"     0         0  ( 6UT   "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    ,     8    (    !          %    "
+"\"     $    \"     0         0  ( 6UT   "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    ,     8    (    !          %    "
+"\"     $    \"     0         0  ( 6UT   "
+  }
+}
